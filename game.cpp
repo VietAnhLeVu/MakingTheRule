@@ -464,6 +464,7 @@ void Game::running()
         sprintf(map_file,"resource/map_resource/map_%d.dat",playing_map);
         lvl_1.LoadStage(map_file);
         lvl_1.ResetStageWin();
+        lvl_1.RestartRule();
         int DEFAULT_X = lvl_1.GetDefaultX();
         int DEFAULT_Y = lvl_1.GetDefaultY();
         baba.SetX(DEFAULT_X);
