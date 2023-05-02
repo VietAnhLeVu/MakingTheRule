@@ -1004,7 +1004,7 @@ void Game::running()
                 SDL_RenderPresent(gRenderer);
             }
 
-    if(quit || win)
+    if(quit || win || lost)
             {
                 break;
             }
