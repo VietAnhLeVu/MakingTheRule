@@ -1,5 +1,5 @@
 #OBJS specifies which files to compile as part of the project
-OBJS = main.cpp Texture.cpp game.cpp Object.cpp CommonFunc.cpp stage.cpp
+OBJS = main.cpp Texture.cpp Object.cpp game.cpp CommonFunc.cpp stage.cpp
 
 #CC specifies which compiler we're using
 CC = g++

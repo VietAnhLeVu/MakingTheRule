@@ -15,25 +15,6 @@ Object::~Object()
 {
 
 }
-/*
-bool Object::loadFromFile(SDL_Renderer* gRenderer,std::string path,int clip)
-{
-    bool load_img = LTexture::loadFromFile(gRenderer,path);
-    if(load_img)
-    {
-        for(int i = 0; i<clip; i++)
-        {
-            SDL_Rect* temp = new SDL_Rect;
-            temp->w = LTexture::getWidth()/clip;
-            temp->h = LTexture::getHeight();
-            temp->x = i*(LTexture::getWidth()/clip);
-            temp->y = 0;
-            SpriteClips.push_back(temp);
-        }
-    }
-    return load_img;
-}
-*/
 void Object::MakeSpriteClip(int clip)
 {
     for(int i = 0; i<clip; i++)
@@ -112,7 +93,7 @@ void Object::HandleEvent(SDL_Event& e)
             }
         }
     }
-    else if(e.type == SDL_KEYUP)
+    else
     {
         if(action_type != -1)
         {
