@@ -829,6 +829,13 @@ void Game::running()
                     else
                     {
                         lvl_1.ChangeBlock(BABA_TILE,FLAG);
+                        if(!baba.Get_Out_Of_Map())
+                        {
+                            lvl_1.ChangePlayerTile((baba.GetX() +1)/64,(baba.GetY()+1)/64,FLAG);
+                            baba.SetX(-9999);
+                            baba.SetY(-9999);
+                            baba.Change_Out_Of_Map_Ch(true);
+                        }
                     }
                 }
                 else if(lvl_1.baba_is_wall)
@@ -873,6 +880,13 @@ void Game::running()
                     }
                     else
                     {
+                        if(!baba.Get_Out_Of_Map())
+                        {
+                            lvl_1.ChangePlayerTile((baba.GetX() +1)/64,(baba.GetY()+1)/64,WALL_BLOCK);
+                            baba.SetX(-9999);
+                            baba.SetY(-9999);
+                            baba.Change_Out_Of_Map_Ch(true);
+                        }
                         lvl_1.ChangeBlock(BABA_TILE,WALL_BLOCK);
                     }
                 }
@@ -908,6 +922,13 @@ void Game::running()
                     }
                     else
                     {
+                        if(!baba.Get_Out_Of_Map())
+                        {
+                            lvl_1.ChangePlayerTile((baba.GetX() +1)/64,(baba.GetY()+1)/64,ROCK);
+                            baba.SetX(-9999);
+                            baba.SetY(-9999);
+                            baba.Change_Out_Of_Map_Ch(true);
+                        }
                         lvl_1.ChangeBlock(BABA_TILE,ROCK);
                     }
                 }
@@ -941,6 +962,13 @@ void Game::running()
                     }
                     else
                     {
+                        if(!baba.Get_Out_Of_Map())
+                        {
+                            lvl_1.ChangePlayerTile((baba.GetX() +1)/64,(baba.GetY()+1)/64,WATER);
+                            baba.SetX(-9999);
+                            baba.SetY(-9999);
+                            baba.Change_Out_Of_Map_Ch(true);
+                        }
                         lvl_1.ChangeBlock(BABA_TILE,WATER);
                     }
                 }
@@ -974,6 +1002,13 @@ void Game::running()
                     }
                     else
                     {
+                        if(!baba.Get_Out_Of_Map())
+                        {
+                            lvl_1.ChangePlayerTile((baba.GetX() +1)/64,(baba.GetY()+1)/64,SKULL);
+                            baba.SetX(-9999);
+                            baba.SetY(-9999);
+                            baba.Change_Out_Of_Map_Ch(true);
+                        }
                         lvl_1.ChangeBlock(BABA_TILE,SKULL);
                     }
                 }
