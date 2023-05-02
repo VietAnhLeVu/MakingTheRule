@@ -7282,7 +7282,7 @@ void Stage::CheckRule()
                             rock_is_skull = true;
                             break;
                         case WATER_TEXT:
-                            rock_is_skull = true;
+                            rock_is_water = true;
                             break;
                         default:
                             break;
