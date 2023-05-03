@@ -461,6 +461,7 @@ void Game::running()
             quit = false;
         }
         char map_file[40];
+        std::cout << 1;
         sprintf(map_file,"resource/map_resource/map_%d.dat",playing_map);
         lvl_1.LoadStage(map_file);
         lvl_1.ResetStageWin();
@@ -1041,13 +1042,16 @@ void Game::running()
             // render lost stage panel
             if(lost)
             {
+                SDL_RenderClear( gRenderer );
+                lvl_1.DrawStage(gRenderer);
+                return_menu_button.render(return_menu_button.GetX(),return_menu_button.GetY(),gRenderer);
                 lost_stage.render(lost_stage.GetX(),lost_stage.GetY(),gRenderer);
                 SDL_RenderPresent(gRenderer);
             }
 
     if(quit || win || lost)
             {
-                break;
+                continue;
             }
 // Manipulate rule for baba
             if(lvl_1.baba_is_push)
