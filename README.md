@@ -12,3 +12,15 @@
 - Install [GNU MAKE](https://stackoverflow.com/questions/32127524/how-to-install-and-use-make-in-windows) or [MINGW32](https://sourceforge.net/projects/mingw/files/MinGW/Extension/make/mingw32-make-3.80-3/) .
 - Open Command Prompt in MakingTheRule folder,or change directory to your game folder,type `make` or `mingw32-make`. It should compile into a program name `MakingTheRule.exe`.
 - Thank you so much for giving time <3 <3 <3 . Enjoy !!!.
+
+<h3> About my game <h3>
+  
+  - Some image about my game :
+![image](https://user-images.githubusercontent.com/86595845/236689731-ff7fcdaf-6790-4af2-81aa-b34f2dc6db88.png)
+![image](https://user-images.githubusercontent.com/86595845/236689738-a70f3078-82f0-4e49-af65-9081b5a866dd.png)
+![image](https://user-images.githubusercontent.com/86595845/236689745-7825c95a-4c20-46d9-a2e2-4428c3d6df9e.png)
+![image](https://user-images.githubusercontent.com/86595845/236689752-fff3320a-573d-47fb-a78e-83b9996029c0.png)
+![image](https://user-images.githubusercontent.com/86595845/236689759-eeaa5b75-8d08-424c-ad4e-ddf3f6b963f8.png)
+
+  - To make this I used Tile Map technique. I also control my map matrix pretty redundantly and control the effect of the rule throw `ifelse` and `switch case`.
+  My code can be probaly optimize but this is my first time doing this so I surely have many minus points but I will always be willing to improve.
