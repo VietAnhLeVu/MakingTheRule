@@ -353,7 +353,8 @@ void Game::menu()
                         }
 
                     }
-                }else if(tutorial_seeing)
+                }
+                else if(tutorial_seeing)
                 {
                     if(SDL_CommonFunc::CheckFocusWithRect(mouse_x,mouse_y,esc_button.GetPosRect()))
                     {
@@ -539,27 +540,28 @@ void Game::running()
                     {
                         if(playing_map < 10)
                         {
-                        SDL_Rect return_button = {544,384,64,64};
-                        if(SDL_CommonFunc::CheckFocusWithRect(e.motion.x,e.motion.y,return_button))
-                        {
-                            win = false;
-                            quit = true;
-                            playing = false;
+                            SDL_Rect return_button = {544,384,64,64};
+                            if(SDL_CommonFunc::CheckFocusWithRect(e.motion.x,e.motion.y,return_button))
+                            {
+                                win = false;
+                                quit = true;
+                                playing = false;
+                            }
+                            SDL_Rect next_stage_button = {672,384,64,64};
+                            if(SDL_CommonFunc::CheckFocusWithRect(e.motion.x,e.motion.y,next_stage_button))
+                            {
+                                quit = true;
+                                next_stage = true;
+                            }
                         }
-                        SDL_Rect next_stage_button = {672,384,64,64};
-                        if(SDL_CommonFunc::CheckFocusWithRect(e.motion.x,e.motion.y,next_stage_button))
-                        {
-                            quit = true;
-                            next_stage = true;
-                        }
-                        }else if(playing_map == 10)
+                        else if(playing_map == 10)
                         {
                             SDL_Rect return_button = {608,384,64,64};
                             if(SDL_CommonFunc::CheckFocusWithRect(e.motion.x,e.motion.y,return_button))
                             {
-                            win = false;
-                            quit = true;
-                            playing = false;
+                                win = false;
+                                quit = true;
+                                playing = false;
                             }
                         }
                     }
@@ -588,7 +590,7 @@ void Game::running()
                     // Definitely win
                     if(lvl_1.baba_is_win)
                     {
-                    win = true;
+                        win = true;
                     }
                     if(lvl_1.baba_is_kill || lvl_1.baba_is_sink)
                     {
@@ -598,7 +600,8 @@ void Game::running()
                         if(lvl_1.baba_is_sink && !lost)
                         {
                             Sink_Sound_Effect();
-                        }else if(lvl_1.baba_is_kill && !lost)
+                        }
+                        else if(lvl_1.baba_is_kill && !lost)
                         {
                             Kill_Sound_Effect();
                         }
@@ -613,7 +616,7 @@ void Game::running()
                     baba.HandleEvent(e);
                     if(win || lost)
                     {
-                    continue;
+                        continue;
                     }
                     lvl_1.ManipulateActionType(baba.GetActionType());
                     // Restrict moving one block per time
@@ -825,7 +828,7 @@ void Game::running()
                         }
                         if(lvl_1.baba_is_win)
                         {
-                        win = true;
+                            win = true;
                         }
                     }
                     else
@@ -877,7 +880,7 @@ void Game::running()
                         }
                         if(lvl_1.baba_is_win)
                         {
-                        win = true;
+                            win = true;
                         }
                     }
                     else
@@ -918,7 +921,7 @@ void Game::running()
                         }
                         if(lvl_1.baba_is_win)
                         {
-                        win = true;
+                            win = true;
                         }
 
                     }
@@ -959,7 +962,7 @@ void Game::running()
                             lvl_1.MoveStageTile(WATER);
                         if(lvl_1.baba_is_win)
                         {
-                        win = true;
+                            win = true;
                         }
                     }
                     else
@@ -999,7 +1002,7 @@ void Game::running()
                             lvl_1.MoveStageTile(SKULL);
                         if(lvl_1.baba_is_win)
                         {
-                        win = true;
+                            win = true;
                         }
                     }
                     else
@@ -1017,22 +1020,23 @@ void Game::running()
 
             }
 
-    if(lvl_1.CheckSunk())
-    {
-        Sink_Sound_Effect();
-    }
-    if(lvl_1.CheckKill())
-    {
-        Kill_Sound_Effect();
-    }
-    // Check win for stage move
+            if(lvl_1.CheckSunk())
+            {
+                Sink_Sound_Effect();
+            }
+            if(lvl_1.CheckKill())
+            {
+                Kill_Sound_Effect();
+            }
+            // Check win for stage move
             if(lvl_1.CheckStageWin())
             {
                 win = true;
             }
-    //render win stage panel
+            //render win stage panel
             if(win && !lost)
-            {   if(playing_map == 10)
+            {
+                if(playing_map == 10)
                 {
                     win_stage.loadFromFile(gRenderer,"resource/last_map_win.png");
                 }
@@ -1049,7 +1053,7 @@ void Game::running()
                 SDL_RenderPresent(gRenderer);
             }
 
-    if(quit || win || lost)
+            if(quit || win || lost)
             {
                 continue;
             }
@@ -1106,11 +1110,12 @@ void Game::running()
             {
                 if(lvl_1.CheckWin(baba,FLAG))
                 {
-                     baba.SetX(-9999);
+                    baba.SetX(-9999);
                     baba.SetY(-9999);
                     Kill_Sound_Effect();
                 }
-            }else if(lvl_1.flag_is_win)
+            }
+            else if(lvl_1.flag_is_win)
             {
                 if(lvl_1.CheckWin(baba,FLAG))
                 {
@@ -1176,12 +1181,13 @@ void Game::running()
                 {
                     if(lvl_1.CheckWin(baba,i))
                     {
-                         baba.SetX(-9999);
-                    baba.SetY(-9999);
-                    Kill_Sound_Effect();
+                        baba.SetX(-9999);
+                        baba.SetY(-9999);
+                        Kill_Sound_Effect();
                     }
                 }
-            }else if(lvl_1.wall_is_win)
+            }
+            else if(lvl_1.wall_is_win)
             {
                 for(int wall_object = HORIZONTAL_WALL; wall_object<=WALL_BLOCK; wall_object++)
                     if(lvl_1.CheckWin(baba,wall_object))
@@ -1236,11 +1242,12 @@ void Game::running()
             {
                 if(lvl_1.CheckWin(baba,ROCK))
                 {
-                     baba.SetX(-9999);
+                    baba.SetX(-9999);
                     baba.SetY(-9999);
                     Kill_Sound_Effect();
                 }
-            }else if(lvl_1.rock_is_win)
+            }
+            else if(lvl_1.rock_is_win)
             {
                 if(lvl_1.CheckWin(baba,ROCK))
                 {
@@ -1293,11 +1300,12 @@ void Game::running()
             {
                 if(lvl_1.CheckWin(baba,WATER))
                 {
-                     baba.SetX(-9999);
+                    baba.SetX(-9999);
                     baba.SetY(-9999);
                     Kill_Sound_Effect();
                 }
-            }else if(lvl_1.water_is_win)
+            }
+            else if(lvl_1.water_is_win)
             {
                 if(lvl_1.CheckWin(baba,WATER))
                 {
@@ -1354,7 +1362,8 @@ void Game::running()
                     baba.SetY(-9999);
                     Kill_Sound_Effect();
                 }
-            }else if(lvl_1.skull_is_win)
+            }
+            else if(lvl_1.skull_is_win)
             {
                 if(lvl_1.CheckWin(baba,SKULL))
                 {
@@ -1412,7 +1421,7 @@ void Game::Sink_Sound_Effect()
         printf("%s", Mix_GetError());
     }
     Mix_PlayChannel(-1,music,0);
-     Mix_Volume(-1, 32);
+    Mix_Volume(-1, 32);
 }
 
 void Game::Kill_Sound_Effect()
@@ -1425,5 +1434,5 @@ void Game::Kill_Sound_Effect()
         printf("%s", Mix_GetError());
     }
     Mix_PlayChannel(-1,music,0);
-     Mix_Volume(-1, 32);
+    Mix_Volume(-1, 32);
 }
