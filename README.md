@@ -23,4 +23,4 @@
 ![image](https://user-images.githubusercontent.com/86595845/236689759-eeaa5b75-8d08-424c-ad4e-ddf3f6b963f8.png)
 
   - To make this I used Tile Map technique. I also control my map matrix pretty redundantly and control the effect of the rule throw `ifelse` and `switch case`.
-  My code can be probaly optimize but this is my first time doing this so I surely have many minus points but I will always be willing to improve.
+  My code can be probably optimize but this is my first time doing this so I surely have many minus points but I will always be willing to improve.
